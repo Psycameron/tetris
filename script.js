@@ -48,6 +48,10 @@ const TETROMINOES = {
 let playfield;
 let tetromino;
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function convertPositionToIndex(row, column) {
   return row * PLAYFIELD_COLUMNS + column;
 }
@@ -65,7 +69,7 @@ function generatePlayField() {
 }
 
 function generateTetromino() {
-  const name = TETROMINO_NAMES[1];
+  const name = TETROMINO_NAMES[getRandomInt(TETROMINO_NAMES.length)];
   const matrix = TETROMINOES[name];
   let startColumn = Math.round((PLAYFIELD_COLUMNS - matrix.length) / 2);
 

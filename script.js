@@ -33,9 +33,9 @@ const TETROMINOES = {
     [1, 0, 0],
   ],
   N: [
+    [1, 0, 0],
+    [1, 1, 0],
     [0, 1, 0],
-    [0, 1, 1],
-    [0, 0, 1],
   ],
   P: [
     [0, 1, 0, 0],
@@ -45,12 +45,12 @@ const TETROMINOES = {
   ],
 };
 
+let playfield;
+let tetromino;
+
 function convertPositionToIndex(row, column) {
   return row * PLAYFIELD_COLUMNS + column;
 }
-
-let playfield;
-let tetromino;
 
 function generatePlayField() {
   for (let i = 0; i < PLAYFIELD_ROWS * PLAYFIELD_COLUMNS; i++) {
@@ -67,12 +67,13 @@ function generatePlayField() {
 function generateTetromino() {
   const name = TETROMINO_NAMES[1];
   const matrix = TETROMINOES[name];
-  // console.log(matrix);
+  let startColumn = Math.round((PLAYFIELD_COLUMNS - matrix.length) / 2);
+
   tetromino = {
     name,
     matrix,
-    row: 3,
-    column: 4,
+    row: 0,
+    column: startColumn,
   };
 }
 
@@ -95,6 +96,7 @@ function drawPlayField() {
 }
 
 function drawTetromino() {
+  console.log(`🚀 ~ drawTetromino ~ tetromino:`, tetromino);
   const name = tetromino.name;
   const tetrominoMatrixSize = tetromino.matrix.length;
 
@@ -113,8 +115,6 @@ function drawTetromino() {
   }
   // row
 }
-// drawTetromino();
-// drawPlayField();
 
 function draw() {
   cells.forEach((cell) => cell.removeAttribute("class"));

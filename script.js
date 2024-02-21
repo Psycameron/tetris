@@ -5,7 +5,7 @@
 
 const PLAYFIELD_COLUMNS = 10;
 const PLAYFIELD_ROWS = 20;
-const TETROMINO_NAMES = ["O", "J"];
+const TETROMINO_NAMES = ["O", "J", "M", "K", "L", "N", "P"];
 
 const TETROMINOES = {
   O: [

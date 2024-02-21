@@ -1,35 +1,54 @@
-*{
-    margin: 0;
+* {
+  margin: 0;
 }
 
-body{
-    background: 
-        linear-gradient(320deg, #b4d415, rgb(230, 81, 7));
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  background: linear-gradient(320deg, #b4d415, rgb(230, 81, 7));
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.grid{
-    background: rgb(3, 3, 73);
-    padding: 0.5vh;
-    display: grid;
-    grid-template-columns: repeat(10, auto);
-    gap: 0.5vh;
+.grid {
+  background: rgb(3, 3, 73);
+  padding: 0.5vh;
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  gap: 0.5vh;
 }
 
-.grid > div{
-    height: min(4vh, 7vw);
-    width: min(4vh, 7vw);
-    background-color: rgba(182, 166, 166, 0.2);
-    border-radius: 0.3vh;
+.grid > div {
+  height: min(4vh, 7vw);
+  width: min(4vh, 7vw);
+  background-color: rgba(182, 166, 166, 0.2);
+  border-radius: 0.3vh;
 }
 
-.grid .O{
-    background-color: rgb(143, 32, 247);
+.grid .O {
+  background-color: rgb(143, 32, 247);
 }
 
-.grid .J{
-    background-color: rgb(211, 202, 17);
+.grid .J {
+  background-color: rgb(211, 202, 17);
+}
+
+.grid .M {
+  background-color: rgb(49, 211, 17);
+}
+
+.grid .K {
+  background-color: rgb(189, 17, 74);
+}
+
+.grid .L {
+  background-color: rgb(190, 15, 176);
+}
+
+.grid .N {
+  background-color: rgb(17, 172, 86);
+}
+
+.grid .P {
+  background-color: rgb(212, 101, 10);
 }

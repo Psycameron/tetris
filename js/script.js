@@ -5,12 +5,10 @@ import {
   TETROMINO_NAMES,
 } from "./variables.js";
 
+import { getRandomInt } from "./random.js";
+
 let playfield;
 let tetromino;
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
 
 function convertPositionToIndex(row, column) {
   return row * PLAYFIELD_COLUMNS + column;

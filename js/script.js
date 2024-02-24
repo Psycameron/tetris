@@ -1,49 +1,9 @@
-// 1. Додати нові фігури
-// 2. Стилізувати нові фігури
-// 3. Додати функцію рандому котра буде поветати випадкову фігуру
-// 4. Центрувати фігуру незалежно від ширини
-
-const PLAYFIELD_COLUMNS = 10;
-const PLAYFIELD_ROWS = 20;
-const TETROMINO_NAMES = ["O", "J", "M", "K", "L", "N", "P"];
-
-const TETROMINOES = {
-  O: [
-    [1, 1],
-    [1, 1],
-  ],
-  J: [
-    [1, 0, 0],
-    [1, 1, 1],
-    [0, 0, 0],
-  ],
-  M: [
-    [0, 0, 1],
-    [1, 1, 1],
-    [0, 0, 0],
-  ],
-  K: [
-    [0, 1, 0],
-    [1, 1, 1],
-    [0, 1, 0],
-  ],
-  L: [
-    [0, 1, 0],
-    [1, 1, 0],
-    [1, 0, 0],
-  ],
-  N: [
-    [1, 0, 0],
-    [1, 1, 0],
-    [0, 1, 0],
-  ],
-  P: [
-    [0, 1, 0, 0],
-    [0, 1, 0, 0],
-    [0, 1, 0, 0],
-    [0, 1, 0, 0],
-  ],
-};
+import {
+  PLAYFIELD_COLUMNS,
+  PLAYFIELD_ROWS,
+  TETROMINOES,
+  TETROMINO_NAMES,
+} from "./variables.js";
 
 let playfield;
 let tetromino;
@@ -93,14 +53,12 @@ function drawPlayField() {
 
       const name = playfield[row][column];
       const cellIndex = convertPositionToIndex(row, column);
-      // console.log(cellIndex);
       cells[cellIndex].classList.add(name);
     }
   }
 }
 
 function drawTetromino() {
-  console.log(`🚀 ~ drawTetromino ~ tetromino:`, tetromino);
   const name = tetromino.name;
   const tetrominoMatrixSize = tetromino.matrix.length;
 
@@ -112,7 +70,6 @@ function drawTetromino() {
         tetromino.row + row,
         tetromino.column + column
       );
-      // console.log(cellIndex);
       cells[cellIndex].classList.add(name);
     }
     // column
